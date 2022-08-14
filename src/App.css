@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 .App-header {
@@ -12,13 +13,23 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.sidebar {
+  position: fixed;
+  top: 4%;
+  width: 100%;
+}
 
-.sidebar a.active {
+.sidebar .itemStyle a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+}
+.sidebar .itemStyle a.active {
   background-color: #04AA6D;
   color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.sidebar .itemStyle a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
@@ -32,9 +43,53 @@
 .grid2{
   margin: 10%;
 }
-#about, #experience, #projects{
+#about, #experience, #projects,#resume, #skills, #education, #contact{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-size: 18px;
+  min-height: 100vh;
+}
+ul{
+  padding: 0;
+}
+ul li{
+  list-style-type: none;
+  text-align: left;
+}
+.courses{
+  text-align: left;
+}
+.courses ul li{
+  list-style-type: disc;
+}
+.logo img{
+  max-width: 10rem;
+  padding: 1rem
+}
+#contact, #resume{
+  display: flex;
+  align-items: center;
+}
+#contact a, #resume a{
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.exp-card{
+  margin: 0.8rem 0;
+}
+#resume div{
+  position: relative;
+  max-height: 30rem;
+  overflow: hidden;
+}
+#resume div a{
+  background-color: rgb(61, 122, 61);
+  position: absolute;
+  top: 19rem;
+  left: 35%;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
 }
