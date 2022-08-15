@@ -11,7 +11,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import TaskIcon from "@mui/icons-material/Task";
 import AbcIcon from "@mui/icons-material/Abc";
 import ContactsIcon from "@mui/icons-material/Contacts";
-import ArticleIcon from "@mui/icons-material/Article";
+import Button from "@mui/material/Button";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -64,7 +64,6 @@ function App() {
   const ref4 = useRef(null);
   const ref5 = useRef(null);
   const ref6 = useRef(null);
-  const ref7 = useRef(null);
 
   const isInViewport1 = useIsInViewport(ref1);
   const isInViewport2 = useIsInViewport(ref2);
@@ -72,7 +71,6 @@ function App() {
   const isInViewport4 = useIsInViewport(ref4);
   const isInViewport5 = useIsInViewport(ref5);
   const isInViewport6 = useIsInViewport(ref6);
-  const isInViewport7 = useIsInViewport(ref7);
   return (
     <div className="App">
       <Grid container spacing={2}>
@@ -121,12 +119,6 @@ function App() {
               <span>Contact</span>
             </a>
           </Item>
-          <Item className="itemStyle">
-            <a href="#resume" className={isInViewport7 ? "active" : ""}>
-              <ArticleIcon />
-              <span>Resume</span>
-            </a>
-          </Item>
         </Grid>
       </Grid>
 
@@ -143,15 +135,18 @@ function App() {
               learning about Machine Learning.I have worked in technologies like
               ReactJs, NodeJs, MongoDB, ExpreessJs, Python, C++. etc.
             </p>
-            <p>
-              <b>Languages: </b>C, C++, Python, JavaScript
-            </p>
-            <p>
-              <b>Databases: </b>MySql, MongoDB
-            </p>
-            <p>
-              <b>Technologies: </b>Git, JIRA
-            </p>
+
+            {/* <a href="/Sushanta Senapati Resume.pdf" download>
+                Download Resume
+              </a> */}
+            <Button
+              variant="contained"
+              href="/Sushanta Senapati Resume.pdf"
+              download
+              style={{ margin: "auto" }}
+            >
+              Download CV
+            </Button>
           </Item>
           <h1>Experience</h1>
           <Item ref={ref2} id="experience">
@@ -171,10 +166,14 @@ function App() {
                 <Typography>
                   <h2>Server Technology Intern</h2>
                   <p>
-                    Worked with Site Reliable Engineers of Block Storage Team of Oracle in developing the BOSS Client script
+                    Worked with Site Reliable Engineers of Block Storage Team of
+                    Oracle in developing the BOSS Client script
                   </p>
                   <p>
-                    It will automate the works of BOSS UI, hence reducing the effort to do works manually for block storage works like managing block volumes, boot volumes, backups, tenant utilizations. etc
+                    It will automate the works of BOSS UI, hence reducing the
+                    effort to do works manually for block storage works like
+                    managing block volumes, boot volumes, backups, tenant
+                    utilizations. etc
                   </p>
                 </Typography>
                 <Typography style={{ display: "flex", padding: "20px" }}>
@@ -186,7 +185,7 @@ function App() {
             </Card>
             <Card
               sx={{ width: "100%" }}
-              style={{ backgroundColor: "hotpink" }}
+              style={{ backgroundColor: "lightgreen" }}
               className="exp-card"
             >
               <CardContent>
@@ -200,10 +199,12 @@ function App() {
                 <Typography>
                   <h2>Project Intern</h2>
                   <p>
-                    Worked on open source library Development using extended typescript on Rounded Image View for android 
+                    Worked on open source library Development using extended
+                    typescript on Rounded Image View for android
                   </p>
                   <p>
-                    Can use the library for making images to different shapes especially rounded.
+                    Can use the library for making images to different shapes
+                    especially rounded.
                   </p>
                 </Typography>
                 <Typography style={{ display: "flex", padding: "20px" }}>
@@ -410,34 +411,24 @@ function App() {
           </Item>
           <h1>Contact</h1>
           <Item id="contact" ref={ref6}>
-            <a href="#">
-              <LocalPhoneIcon /> +91 7609067900
-            </a>
             <a href="mailto:1307senapati@gmail.com" target="_blank">
-              <EmailIcon />
-              1307senapati@gmail.com
+              <EmailIcon fontSize="large" />
             </a>
-            <a href="https://www.linkedin.com/in/sushanta-senapati-b089801b4/" target="_blank">
-              <LinkedInIcon />
-              Sushanta Senapati
+            <a
+              href="https://www.linkedin.com/in/sushanta-senapati-b089801b4/"
+              target="_blank"
+            >
+              <LinkedInIcon fontSize="large"/>
             </a>
-            <a href="https://www.instagram.com/_sushanta.senapati_/" target="_blank">
-              <InstagramIcon />
-              Sushanta Senapati
+            <a
+              href="https://www.instagram.com/_sushanta.senapati_/"
+              target="_blank"
+            >
+              <InstagramIcon fontSize="large" />
             </a>
             <a href="https://github.com/sushanta1307/" target="_blank">
-              <GitHubIcon />
-              Sushanta Senapati
+              <GitHubIcon fontSize="large"/>
             </a>
-          </Item>
-          <h1>Resume</h1>
-          <Item id="resume" ref={ref7}>
-            <div>
-              <img src="/images/resume.png" alt="Resume" />
-              <a href="/Sushanta Senapati Resume.pdf" download>
-                Download Resume
-              </a>
-            </div>
           </Item>
         </Grid>
       </Grid>
