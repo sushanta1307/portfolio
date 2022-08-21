@@ -5,7 +5,6 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
 import InfoIcon from "@mui/icons-material/Info";
-import MenuIcon from "@mui/icons-material/Menu";
 import ShowChartSharpIcon from "@mui/icons-material/ShowChartSharp";
 import SchoolIcon from "@mui/icons-material/School";
 import TaskIcon from "@mui/icons-material/Task";
@@ -25,7 +24,6 @@ import TouchAppIcon from "@mui/icons-material/TouchApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -73,8 +71,8 @@ function App() {
   const isInViewport6 = useIsInViewport(ref6);
   return (
     <div className="App">
-      <Grid container spacing={2}>
-        <Grid item xs={2} sm={2} className="sidebar">
+      <Grid container spacing={0}>
+        <Grid item xs={2} sm={2} md={2} className="sidebar">
           <Item>
             <Avatar
               alt="Sushanta Senapati"
@@ -120,10 +118,6 @@ function App() {
             </a>
           </Item>
         </Grid>
-      </Grid>
-
-      <Grid container spacing={2}>
-        <Grid item xs={2} sm={2}></Grid>
         <Grid item xs={10} className="grid2">
           <h1>About</h1>
           <Item ref={ref1} id="about">
@@ -135,10 +129,6 @@ function App() {
               learning about Machine Learning.I have worked in technologies like
               ReactJs, NodeJs, MongoDB, ExpreessJs, Python, C++. etc.
             </p>
-
-            {/* <a href="/Sushanta Senapati Resume.pdf" download>
-                Download Resume
-              </a> */}
             <Button
               variant="contained"
               href="/Sushanta Senapati Resume.pdf"
@@ -221,7 +211,7 @@ function App() {
             id="projects"
             style={{ display: "flex", flexDirection: "row" }}
           >
-            <Card sx={{ width: "31%", margin: "1%" }}>
+            <Card className="project-card" >
               <CardMedia
                 component="img"
                 height="240"
@@ -245,7 +235,7 @@ function App() {
                 </a>
               </CardActions>
             </Card>
-            <Card sx={{ width: "31%", margin: "1%" }}>
+            <Card className="project-card" >
               <CardMedia
                 component="img"
                 height="240"
@@ -269,7 +259,7 @@ function App() {
                 </a>
               </CardActions>
             </Card>
-            <Card sx={{ width: "31%", margin: "1%" }}>
+            <Card className="project-card" >
               <CardMedia
                 component="img"
                 height="240"
@@ -300,7 +290,7 @@ function App() {
             ref={ref4}
             style={{ display: "flex", flexDirection: "row" }}
           >
-            <Card sx={{ width: "48%", margin: "1%" }}>
+            <Card className="edn">
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   Jawahar Navoday Vidyalaya, Dhenkanal
@@ -332,7 +322,7 @@ function App() {
                 </Typography>
               </CardContent>
             </Card>
-            <Card sx={{ width: "48%", margin: "1%" }}>
+            <Card className="edn">
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   National Institute of Technology, Rourkela
@@ -384,7 +374,7 @@ function App() {
                   <img src="/images/python.jpg" alt="Python" />
                   <img src="/images/mysql.jpg" alt="Mysql" />
                   <img src="/images/cpp.png" alt="C++" />
-                  <img src="/images/mongoDB.png" alt="MongoDB" />
+                  <img src="/images/mongodb.png" alt="MongoDB" />
                 </div>
               </CardContent>
             </Card>
@@ -411,8 +401,11 @@ function App() {
           </Item>
           <h1>Contact</h1>
           <Item id="contact" ref={ref6}>
-            <a href="mailto:1307senapati@gmail.com" target="_blank">
-              <EmailIcon fontSize="large" />
+            <a
+              href="mailto:1307senapati@gmail.com"
+              target="_blank"
+            >
+              <EmailIcon fontSize="large"/>
             </a>
             <a
               href="https://www.linkedin.com/in/sushanta-senapati-b089801b4/"
@@ -426,7 +419,8 @@ function App() {
             >
               <InstagramIcon fontSize="large" />
             </a>
-            <a href="https://github.com/sushanta1307/" target="_blank">
+            <a href="https://github.com/sushanta1307/" 
+              target="_blank">
               <GitHubIcon fontSize="large"/>
             </a>
           </Item>

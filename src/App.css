@@ -2,14 +2,20 @@
 html{
   scroll-behavior: smooth;
 }
+a {
+  color: black;
+}
+a:visited {
+  color: black;
+}
 .App {
   text-align: center;
 }
 
 .sidebar {
-  position: fixed;
-  top: 9%;
-  width: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 }
 
 .sidebar .itemStyle a {
@@ -71,4 +77,19 @@ ul li{
 }
 .exp-card{
   margin: 0.8rem 0;
+}
+#projects, #education{
+  display: flex;
+  flex-wrap: wrap;
+}
+#projects .project-card{
+  margin: 1%;
+}
+#education .edn{
+  margin: 1%;
+}
+@media only screen and (max-width: 500px) {
+  .itemStyle a span{
+    display: none;
+  }
 }
